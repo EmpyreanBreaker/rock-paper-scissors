@@ -40,15 +40,26 @@ function playRound(computerChoice, humanChoice) {
     return round;
 }
 
+function playGame() {
+    playRound(getComputerChoice(), getHumanChoice());
+    playRound(getComputerChoice(), getHumanChoice());
+    playRound(getComputerChoice(), getHumanChoice());
+    playRound(getComputerChoice(), getHumanChoice());
+    playRound(getComputerChoice(), getHumanChoice());
+
+    console.log("Human Score: " + humanScore);
+    console.log("Computer Score: " + computerScore)
+
+    if (humanScore > computerScore) {
+        console.log("Humanity Wins!")
+    }
+    else if (computerScore < humanScore) {
+        console.log("Bow down to your AI overlords")
+    }
+    else {
+        console.log("It's a tie. Perhaps we need each other.")
+    }
+}
 
 /**Output*/
-playRound(getComputerChoice(), getHumanChoice());
-playRound(getComputerChoice(), getHumanChoice());
-playRound(getComputerChoice(), getHumanChoice());
-playRound(getComputerChoice(), getHumanChoice());
-playRound(getComputerChoice(), getHumanChoice());
-
-console.log("Round One: " + round)
-console.log("Computer Score: " + computerScore)
-console.log("Human Score: " + humanScore)
-console.log("Round: " + round);
+playGame();
