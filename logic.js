@@ -42,10 +42,6 @@ function playRound(computerChoice, humanChoice) {
 
 function playGame() {
     playRound(getComputerChoice(), getHumanChoice());
-    playRound(getComputerChoice(), getHumanChoice());
-    playRound(getComputerChoice(), getHumanChoice());
-    playRound(getComputerChoice(), getHumanChoice());
-    playRound(getComputerChoice(), getHumanChoice());
 
     console.log("Human Score: " + humanScore);
     console.log("Computer Score: " + computerScore)
@@ -61,5 +57,16 @@ function playGame() {
     }
 }
 
+/**Get Human Selection Logic*/
+const buttons = document.querySelectorAll(".game__button");
+let playerChoice = "";
+
+buttons.forEach(button => {
+    button.addEventListener("click", (e) => {
+        playerChoice = e.target.textContent.trim();
+        console.log("Player choice:", playerChoice);
+    });
+});
+
 /**Output*/
-playGame();
+//playGame();
