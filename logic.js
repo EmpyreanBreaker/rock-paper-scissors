@@ -1,20 +1,23 @@
-/**Computer Logic*/
-function generateRandomNumber() {
-    return Math.floor(Math.random() * 3) + 1;
-}
-
+/**Get Computer Selection*/
 function getComputerChoice() {
-    let randomNumber = generateRandomNumber();
+    let randomNumber = Math.floor(Math.random() * 3) + 1;
 
-    if (randomNumber == 1) return "rock";
-    if (randomNumber == 2) return "paper";
-    return "scissors";
+    if (randomNumber == 1) return "Rock";
+    if (randomNumber == 2) return "Paper";
+
+    return "Scissors";
 }
 
-/**Human Logic*/
-function getHumanChoice() {
-    return prompt("Rock, Paper, or Scissors: ").toLocaleLowerCase();
-}
+/**Get Player Selection*/
+const buttons = document.querySelectorAll(".game__button");
+let playerChoice = "";
+
+buttons.forEach(button => {
+    button.addEventListener("click", (e) => {
+        playerChoice = e.target.textContent.trim();
+        console.log("Player choice:", playerChoice);
+    });
+});
 
 /**Game Logic*/
 let round = 0;
@@ -57,16 +60,7 @@ function playGame() {
     }
 }
 
-/**Get Human Selection Logic*/
-const buttons = document.querySelectorAll(".game__button");
-let playerChoice = "";
 
-buttons.forEach(button => {
-    button.addEventListener("click", (e) => {
-        playerChoice = e.target.textContent.trim();
-        console.log("Player choice:", playerChoice);
-    });
-});
 
 /**Output*/
 //playGame();
